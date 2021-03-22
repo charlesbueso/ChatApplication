@@ -3,6 +3,7 @@ package com.example.chatapplication.Adapter;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.chatapplication.MessageActivity;
 import com.example.chatapplication.Model.User;
 import com.example.chatapplication.R;
 
@@ -41,6 +43,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         }else{
             Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, MessageActivity.class);
+                intent.putExtra("userid", user.getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
