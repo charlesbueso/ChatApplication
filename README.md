@@ -1,5 +1,6 @@
 # ChatApplication
 COMP 363 Chat Application Carlos Bueso Luis Santos
+
 First we set up the project:
 - Connected to Firebase database
 - Created main activity as well as supporting activities
