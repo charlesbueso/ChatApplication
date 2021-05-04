@@ -29,7 +29,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ChatsFragment extends Fragment {
+public class  ChatsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private UserAdapter userAdapter;
@@ -106,26 +106,23 @@ public class ChatsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                //mUsers.clear();
+                mUsers.clear();
 
-                for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                for(DataSnapshot snapshot:dataSnapshot.getChildren()) {
 
-                    User user=snapshot.getValue(User.class);
+                    User user = snapshot.getValue(User.class);
 
-                    for(String id:usersList){
-
-                        assert user != null;
+                    for (String id : usersList) {
                         if (user.getId().equals(id)) {
-
+                            if (mUsers.size() != 0) {
+                                mUsers.add(user);
+                            }
                             mUsers.add(user);
-
                         }
-
                     }
-
                 }
 
-                userAdapter=new UserAdapter(getContext(),mUsers);
+                userAdapter=new UserAdapter(getContext(), mUsers, true);
                 recyclerView.setAdapter(userAdapter);
 
 
