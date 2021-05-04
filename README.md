@@ -41,3 +41,28 @@ We still have a long way to go, and the things to be implemented are:
 - Search algorithms for added users.
 - Add function to be able to see if receiver has seen a message.
 - Implementing initial esthetic design.
+
+
+UPDATE
+For Displaying Messages, 
+We worked a bit more on the design background chat items,
+chat item layouts, MessageAdapter class, 
+MessageActivity class. (Show MessageAdapter.java, MessageActivity.java)
+
+Then we displayed users with whom you have messages.
+We worked on the design fragment chats, selecting users
+from chat and also the method readChats. (Show ChatsFragment)
+
+For creating the user profile, we created a fragment and 
+added it to the tablayout. Also showing the user info. (Show ProfileFragment) 
+
+To add profile photo we added the library and permissions from firebase to
+store the images on the database. (Profile fragment)
+
+To add the search bar for users we updated the user fragment, and also 
+added search values on firebase database. We also added a function to mark
+messages as seen but we are still having trouble with that.
+
+Finally, added the functionality of reseting password, where we created 
+the layout (resetPassword) as well as the Activity. Firebase also allows 
+a very user-friendly option to implement it.
